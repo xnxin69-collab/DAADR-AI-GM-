@@ -1,0 +1,145 @@
+/* --- 全局变量 --- */
+:root {
+    --primary: #00FFFF;       /* 赛博青 */
+    --secondary: #FFD700;     /* 荣耀金 */
+    --bg-dark: #050505;       /* 深黑底 */
+    --bg-card: #111111;       /* 卡片底 */
+    --text-main: #FFFFFF;
+    --text-sub: #AAAAAA;
+    --font-head: 'Orbitron', sans-serif;
+    --font-body: 'Noto Sans SC', sans-serif;
+}
+
+/* --- 基础重置 --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+.hidden { display: none !important; } /* 用于隐藏语言 */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* --- 导航栏 --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: rgba(5, 5, 5, 0.95);
+    border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.logo-container { display: flex; align-items: center; gap: 10px; }
+.logo-img { height: 40px; width: auto; } /* Logo图片大小 */
+.logo-text { font-family: var(--font-head); font-weight: 700; font-size: 1.2rem; }
+.tag { font-size: 0.7rem; color: var(--primary); border: 1px solid var(--primary); padding: 2px 5px; border-radius: 4px; margin-left: 5px; }
+
+.nav-right { display: flex; align-items: center; gap: 20px; }
+.nav-links a { font-size: 0.9rem; color: var(--text-main); }
+.nav-links a:hover { color: var(--primary); }
+.btn-lang {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 5px 10px;
+    cursor: pointer;
+    font-family: var(--font-head);
+    border-radius: 4px;
+}
+.btn-lang:hover { background: var(--primary); color: #000; }
+
+/* --- Hero 主视觉 --- */
+#hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+    padding: 80px 0;
+}
+.glitch { font-family: var(--font-head); color: var(--primary); letter-spacing: 5px; margin-bottom: 20px; }
+#hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    background: linear-gradient(90deg, #fff, #888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.subtitle { font-family: var(--font-head); color: var(--secondary); margin-bottom: 30px; font-size: 1.2rem; }
+.intro-text { font-size: 1.2rem; color: var(--text-sub); max-width: 700px; margin: 0 auto 40px; }
+
+/* --- 按钮系统 --- */
+.cta-group { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+.btn-primary {
+    background: var(--primary);
+    color: #000;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+}
+.btn-primary:hover { box-shadow: 0 0 25px rgba(0, 255, 255, 0.8); transform: translateY(-2px); }
+.btn-secondary {
+    border: 1px solid var(--text-main);
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+}
+.btn-secondary:hover { background: #fff; color: #000; }
+
+/* --- 通用区块 --- */
+section { padding: 80px 0; border-top: 1px solid #222; }
+section h3 { font-size: 2rem; text-align: center; margin-bottom: 50px; }
+.sub { font-size: 1rem; color: var(--text-sub); font-family: var(--font-head); display: block; margin-top: 5px; }
+
+/* --- 使命卡片 (3列) --- */
+.quote-box { text-align: center; max-width: 800px; margin: 0 auto 50px; border-left: 4px solid var(--secondary); padding: 20px; background: #0f0f0f; font-size: 1.2rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.card { background: var(--bg-card); padding: 30px; border-radius: 10px; border: 1px solid #333; text-align: center; transition: 0.3s; }
+.card:hover { border-color: var(--primary); transform: translateY(-5px); }
+.icon { font-size: 2.5rem; margin-bottom: 15px; }
+.card h4 { color: var(--primary); margin-bottom: 10px; font-size: 1.3rem; }
+
+/* --- 八大价值观 (4列) --- */
+.bg-dark { background-color: #000; }
+.grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.value-card {
+    background: #0a0a0a;
+    padding: 25px;
+    border: 1px solid #222;
+    position: relative;
+    overflow: hidden;
+}
+.value-card:hover { border-color: var(--secondary); }
+.value-card .num { font-family: var(--font-head); font-size: 3rem; color: #1a1a1a; position: absolute; top: -10px; right: 10px; font-weight: 700; z-index: 0; }
+.value-card h4 { color: var(--text-main); margin-bottom: 10px; position: relative; z-index: 1; }
+.value-card p { color: var(--text-sub); font-size: 0.9rem; position: relative; z-index: 1; }
+.highlight { border: 1px solid var(--primary); }
+.highlight h4 { color: var(--primary); }
+
+/* --- 愿景 & 页脚 --- */
+.vision-box { text-align: center; max-width: 800px; margin: 0 auto; }
+.vision-list { list-style: none; margin-top: 30px; text-align: left; display: inline-block; }
+.vision-list li { margin-bottom: 15px; font-size: 1.1rem; }
+footer { text-align: center; padding: 80px 0; border-top: 2px solid var(--primary); background: #000; }
+.social-links { margin: 30px 0; }
+.copyright { color: #555; font-size: 0.8rem; }
+
+/* --- 移动端适配 --- */
+@media (max-width: 768px) {
+    #hero h1 { font-size: 2rem; }
+    .nav-links { display: none; } /* 手机端暂隐藏菜单，保留切换按钮 */
+    .grid-4, .grid-3 { grid-template-columns: 1fr; }
+}
